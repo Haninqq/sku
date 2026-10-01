@@ -236,7 +236,7 @@
     <div class="meta-row">
       <span><b>분석 대상</b> 모의문제 1·2·3 (학원 제작본)</span>
       <span><b>작성일</b> 2026-09-30</span>
-      <span><b>상태</b> 초안 v1.1</span>
+      <span><b>상태</b> 초안 v1.2</span>
     </div>
   </header>
 
@@ -276,6 +276,7 @@
           <li><strong>상수·하수 표기는 항상 있다.</strong> 관객이 무대를 바라보는 기준으로 왼쪽 = 하수, 오른쪽 = 상수. 도면에 고정적으로 표기한다.</li>
           <li><strong>치수 조건은 항상 주어진다.</strong> 벽 높이·문 높이·스케일, 세 수치는 예외 없이 모든 문제에 명시한다. (분석한 모의문제 1에 이게 빠져 있었던 건 참고할 변형이 아니라 그 문제 자체의 결함으로 본다.)</li>
           <li><strong>점선 = 선택적 개구부.</strong> 벽에 뚫린 구멍을 점선으로 표시해, 그 뒤의 실선 벽(또 다른 공간)이 비쳐 보이게 만들 수 있다. 장면의 스타일에 맞을 때만 쓰는 깊이감 장치이며, 모든 도면에 있어야 하는 건 아니다.</li>
+          <li><strong>표현의 기본값은 평면이다.</strong> 조건에 나열되는 가구·소품·인물은 기본적으로 벽면에 원근감 있게 그려 넣는 평면(회화적) 표현이다. 실제로 종이 등을 접어 세우는 입체물은 조건문이 "반드시 입체로 제작하시오"라고 콕 집어 명시한 대상에 한정된다 — 그 명시가 없으면 그려서 표현한다. (그 명시가 따로 필요하다는 사실 자체가, 나머지는 평면이 기본값이라는 뜻이다.)</li>
         </ul>
       </section>
 
@@ -292,7 +293,7 @@
               <tr><td class="name">4</td><td>필수 오브제·가구 목록</td><td><span class="tag tag-fixed">고정</span></td><td class="note">개수를 숫자로 고정</td></tr>
               <tr><td class="name">5~n</td><td>오브제별 내용 세부</td><td><span class="tag tag-fixed">고정</span></td><td class="note">분량은 가변 — 창작 개입이 가장 큰 지점</td></tr>
               <tr><td class="name">n</td><td>인물 배치</td><td><span class="tag tag-fixed">고정</span></td><td class="note">키(cm) + 위치 + 자세, 스케일 기준점</td></tr>
-              <tr><td class="name">n</td><td>필수 입체 제작물</td><td><span class="tag tag-optional">선택</span></td><td class="note">형태는 장면에 맞춰 자유롭다(사무용 책상+데스크톱, 패션 런웨이 단상, 전통 병풍 등) — 제작 난이도·부품 수는 낮게 유지</td></tr>
+              <tr><td class="name">n</td><td>필수 입체 제작물</td><td><span class="tag tag-optional">선택</span></td><td class="note">이 조건에 지목된 것만 실제 입체로 제작 — 그 외 모든 요소는 평면 표현이 기본값(02장). 형태는 자유(사무용 책상+데스크톱, 패션 런웨이 단상, 전통 병풍 등), 제작 난이도·부품 수만 낮게 유지</td></tr>
               <tr><td class="name">n</td><td>재질 구분 표현</td><td><span class="tag tag-fixed">고정</span></td><td class="note"></td></tr>
               <tr><td class="name">n</td><td>색채 팔레트</td><td><span class="tag tag-fixed">고정</span></td><td class="note">계열색 + 포인트/대비 전략</td></tr>
               <tr><td class="name">*</td><td>총평 통합 문장</td><td><span class="tag tag-fixed">고정</span></td><td class="note">앞의 요소를 종합해 "함께 드러나도록 완성"</td></tr>
@@ -403,7 +404,7 @@
             <div class="step-num">9</div>
             <div class="step-body">
               <h3>필수 입체 제작물 여부 결정 (선택)</h3>
-              <p>넣기로 했다면 형태는 장면에 맞춰 자유롭게 고른다 — 데스크톱이 올라간 사무용 책상, 패션 런웨이 단상, 전통 병풍 같은 것도 좋다. 다만 제작 공정과 부품 수는 낮게 유지해 3시간 안에 완성 가능해야 한다. 위치는 7단계의 채널 배분 판단을 그대로 적용한다.</p>
+              <p>이 단계는 "이 장면에서 유일하게 평면이 아니라 실제로 세워지는 오브제가 무엇인가"를 정하는 것이다 — 나머지 모든 가구·소품·인물은 벽면 평면 표현이 기본값이므로(02장) 따로 명시하지 않는다. 넣기로 했다면 형태는 장면에 맞춰 자유롭게 고른다 — 데스크톱이 올라간 사무용 책상, 패션 런웨이 단상, 전통 병풍 같은 것도 좋다. 다만 제작 공정과 부품 수는 낮게 유지해 3시간 안에 완성 가능해야 한다. 위치는 7단계의 채널 배분 판단을 그대로 적용한다.</p>
             </div>
           </div>
 
@@ -445,6 +446,7 @@
           <li class="check-item"><span class="check-box"></span><div><p class="q">상수·하수 표기가 도면에 있는가?</p></div></li>
           <li class="check-item"><span class="check-box"></span><div><p class="q">벽 알파벳 라벨을 의무감으로 남발하지 않았는가?</p><p class="why">서술만으로 명확하면 라벨은 군더더기다.</p></div></li>
           <li class="check-item"><span class="check-box"></span><div><p class="q">조건 총 개수가 11~17개 범위인가?</p></div></li>
+          <li class="check-item"><span class="check-box"></span><div><p class="q">"반드시 입체로 제작하시오"가 의도한 오브제에만 정확히 붙어 있는가?</p><p class="why">그 외 모든 가구·소품·인물은 평면 표현이 기본값이다 — 애매하게 여러 오브제에 걸쳐 쓰지 않는다.</p></div></li>
         </ul>
       </section>
 
