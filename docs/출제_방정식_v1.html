@@ -236,7 +236,7 @@
     <div class="meta-row">
       <span><b>분석 대상</b> 모의문제 1·2·3 (학원 제작본)</span>
       <span><b>작성일</b> 2026-09-30</span>
-      <span><b>상태</b> 초안 v1</span>
+      <span><b>상태</b> 초안 v1.1</span>
     </div>
   </header>
 
@@ -274,6 +274,7 @@
           <li><strong>도면은 평면도이자 전개도다.</strong> 학생은 조건지의 벽 높이만큼 종이를 재단하고, 그 위에 장면을 그리거나 채색한 뒤, 도면에 그려진 꺾임 각도 그대로 접어 세운다. 도면의 선 하나하나가 실제로 세워지는 벽이라는 뜻이다.</li>
           <li><strong>그려지지 않은 구간 = 객석 쪽 개방부.</strong> 도면의 폴리라인은 닫힌 도형이 아니다. 양 끝이 열려 있고, 그 사이의 그려지지 않은 간격이 관객을 향해 트인 프로시니엄 쪽이다. 이 개방부를 감싸는 형태(스텁벽의 유무, 사선의 각도 등)는 장면마다 달라도 된다 — 정해진 모양은 없다.</li>
           <li><strong>상수·하수 표기는 항상 있다.</strong> 관객이 무대를 바라보는 기준으로 왼쪽 = 하수, 오른쪽 = 상수. 도면에 고정적으로 표기한다.</li>
+          <li><strong>치수 조건은 항상 주어진다.</strong> 벽 높이·문 높이·스케일, 세 수치는 예외 없이 모든 문제에 명시한다. (분석한 모의문제 1에 이게 빠져 있었던 건 참고할 변형이 아니라 그 문제 자체의 결함으로 본다.)</li>
           <li><strong>점선 = 선택적 개구부.</strong> 벽에 뚫린 구멍을 점선으로 표시해, 그 뒤의 실선 벽(또 다른 공간)이 비쳐 보이게 만들 수 있다. 장면의 스타일에 맞을 때만 쓰는 깊이감 장치이며, 모든 도면에 있어야 하는 건 아니다.</li>
         </ul>
       </section>
@@ -291,15 +292,14 @@
               <tr><td class="name">4</td><td>필수 오브제·가구 목록</td><td><span class="tag tag-fixed">고정</span></td><td class="note">개수를 숫자로 고정</td></tr>
               <tr><td class="name">5~n</td><td>오브제별 내용 세부</td><td><span class="tag tag-fixed">고정</span></td><td class="note">분량은 가변 — 창작 개입이 가장 큰 지점</td></tr>
               <tr><td class="name">n</td><td>인물 배치</td><td><span class="tag tag-fixed">고정</span></td><td class="note">키(cm) + 위치 + 자세, 스케일 기준점</td></tr>
-              <tr><td class="name">n</td><td>필수 입체 제작물</td><td><span class="tag tag-optional">선택</span></td><td class="note">있다면 단순 기하형태로 제한</td></tr>
+              <tr><td class="name">n</td><td>필수 입체 제작물</td><td><span class="tag tag-optional">선택</span></td><td class="note">형태는 장면에 맞춰 자유롭다(사무용 책상+데스크톱, 패션 런웨이 단상, 전통 병풍 등) — 제작 난이도·부품 수는 낮게 유지</td></tr>
               <tr><td class="name">n</td><td>재질 구분 표현</td><td><span class="tag tag-fixed">고정</span></td><td class="note"></td></tr>
               <tr><td class="name">n</td><td>색채 팔레트</td><td><span class="tag tag-fixed">고정</span></td><td class="note">계열색 + 포인트/대비 전략</td></tr>
-              <tr><td class="name">n</td><td>치수 조건(벽·문 높이, 스케일)</td><td><span class="tag tag-optional">선택</span></td><td class="note">없어도 도면 자체로 일부 대체 가능</td></tr>
-              <tr><td class="name">n</td><td>조명 지시</td><td><span class="tag tag-optional">선택</span></td><td class="note"></td></tr>
               <tr><td class="name">*</td><td>총평 통합 문장</td><td><span class="tag tag-fixed">고정</span></td><td class="note">앞의 요소를 종합해 "함께 드러나도록 완성"</td></tr>
             </tbody>
           </table>
         </div>
+        <p class="lede">치수 조건(벽·문 높이, 스케일)은 이 표에 없다 — 장면별 선택이 아니라 02장의 불변 규칙이라 항상 포함되기 때문이다. 조명 지시도 이 표에서 뺐다 — 넣을지 말지 따로 저울질하는 변수가 아니라, 2단계(통제 분위기)에서 빛이 필요하다고 판단되면 10단계(재질·색채)의 서술에 자연스럽게 녹아드는 것이기 때문이다.</p>
       </section>
 
       <section id="s4">
@@ -371,7 +371,7 @@
             <div class="step-num">5</div>
             <div class="step-body">
               <h3>도면 폴리라인 설계</h3>
-              <p>장면의 성격과 개연성 있게 맞물리면 좋지만(예: 낡은 건물 → 여러 번 꺾인 벽) 강제 규칙은 아니다. 꺾임·노치·개구부 유무를 자유롭게 정한다. 객석 쪽 개방부는 그리지 않고 비워 둔다.</p>
+              <p>장면의 성격과 개연성 있게 맞물리면 좋지만(예: 낡은 건물 → 여러 번 꺾인 벽) 강제 규칙은 아니다. 꺾임·노치·개구부 유무를 자유롭게 정한다. 객석 쪽 개방부는 그리지 않고 비워 둔다. 이때 벽 높이·문 높이·스케일 값도 반드시 함께 확정한다 — 치수 조건은 불변 규칙(02장)이라 모든 문제에 필수다.</p>
             </div>
           </div>
 
@@ -403,7 +403,7 @@
             <div class="step-num">9</div>
             <div class="step-body">
               <h3>필수 입체 제작물 여부 결정 (선택)</h3>
-              <p>넣기로 했다면 형태는 단순한 기하형태(직육면체 등)로 제한하고, 위치는 7단계의 채널 배분 판단을 그대로 적용한다.</p>
+              <p>넣기로 했다면 형태는 장면에 맞춰 자유롭게 고른다 — 데스크톱이 올라간 사무용 책상, 패션 런웨이 단상, 전통 병풍 같은 것도 좋다. 다만 제작 공정과 부품 수는 낮게 유지해 3시간 안에 완성 가능해야 한다. 위치는 7단계의 채널 배분 판단을 그대로 적용한다.</p>
             </div>
           </div>
 
@@ -411,7 +411,7 @@
             <div class="step-num">10</div>
             <div class="step-body">
               <h3>재질·색채 규정</h3>
-              <p>재질 구분 요구는 항상 넣는다. 색채는 2단계 분위기 문장에서 도출된 계열색 + 포인트/대비 전략으로 서술한다.</p>
+              <p>재질 구분 요구는 항상 넣는다. 색채는 2단계 분위기 문장에서 도출된 계열색 + 포인트/대비 전략으로 서술한다. 분위기가 빛을 요구한다면(스며드는 자연광, 극적인 스포트라이트 등) 이 단계에서 함께 서술한다 — 별도로 넣을지 말지 저울질하는 변수가 아니라 색채·재질 서술의 연장이다.</p>
             </div>
           </div>
 
@@ -468,7 +468,7 @@
             <p class="mood">"영업이 끝나가는 밤의 정지된 피로감"</p>
             <dl>
               <div><dt>조건수</dt><dd>11개</dd></div>
-              <div><dt>치수조건</dt><dd>없음</dd></div>
+              <div><dt>치수조건</dt><dd>없음 (원문 누락 — 03장 기준상 본래 필수)</dd></div>
               <div><dt>입체제작</dt><dd>술 상자 · 음식 수레</dd></div>
               <div><dt>위치 채널</dt><dd>텍스트(조건 9)</dd></div>
               <div><dt>조명지시</dt><dd>없음</dd></div>
