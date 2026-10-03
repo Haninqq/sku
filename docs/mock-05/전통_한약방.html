@@ -1,0 +1,174 @@
+<title>전통 한약방</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#EDEBE4;
+    --paper:#FBFAF6;
+    --ink:#1E2A33;
+    --ink-soft:#57636B;
+    --ink-faint:#8A9199;
+    --line:#DAD5C8;
+    --line-strong:#C3BCA9;
+    --blue:#2C6E8E;
+    --blue-deep:#1F5470;
+    --blue-tint:#E4EEF2;
+    --amber:#8C5E17;
+    --amber-tint:#F3E9D6;
+    --shadow: 0 2px 10px rgba(30,42,51,0.10);
+    --font-display:'IBM Plex Sans KR','Pretendard','Malgun Gothic',sans-serif;
+    --font-body:'Noto Serif KR','Malgun Gothic',serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0A1620;
+      --paper:#132C43;
+      --ink:#E7EEF2;
+      --ink-soft:#9FB4C2;
+      --ink-faint:#6D8494;
+      --line:#24445C;
+      --line-strong:#31597A;
+      --blue:#74BEE0;
+      --blue-deep:#9CD3EE;
+      --blue-tint:#153952;
+      --amber:#E3B15C;
+      --amber-tint:#33280F;
+      --shadow: 0 2px 14px rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A1620; --paper:#132C43; --ink:#E7EEF2; --ink-soft:#9FB4C2; --ink-faint:#6D8494;
+    --line:#24445C; --line-strong:#31597A; --blue:#74BEE0; --blue-deep:#9CD3EE;
+    --blue-tint:#153952; --amber:#E3B15C; --amber-tint:#33280F;
+    --shadow: 0 2px 14px rgba(0,0,0,0.45);
+  }
+
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-body); padding-inline:20px; -webkit-font-smoothing:antialiased; }
+
+  .page{ max-width:900px; margin-inline:auto; display:flex; flex-direction:column; gap:40px; }
+
+  .masthead{ padding-block:40px 8px; display:flex; flex-direction:column; gap:10px; }
+  .eyebrow{ font-family:var(--font-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--blue); display:flex; align-items:center; gap:10px; }
+  .eyebrow .rule{ height:1px; width:36px; background:var(--line-strong); display:inline-block; }
+  .masthead h1{ font-family:var(--font-display); font-size:clamp(26px,4vw,38px); font-weight:700; margin:0; text-wrap:balance; }
+  .masthead p{ color:var(--ink-soft); font-size:15px; max-width:60ch; margin:0; }
+
+  .sheet{ background:var(--paper); border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow); overflow:hidden; }
+  .sheet-bar{
+    display:flex; justify-content:space-between; align-items:center; padding:12px 22px;
+    border-bottom:1px solid var(--line); font-family:var(--font-mono); font-size:11.5px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint);
+  }
+  .sheet-bar b{ color:var(--blue); }
+
+  .cond{ padding:40px 48px 48px; display:flex; flex-direction:column; gap:22px; }
+  @media (max-width:600px){ .cond{ padding:28px 22px 36px; } }
+  .cond .doctitle{ text-align:center; font-family:var(--font-display); font-weight:600; font-size:15px; letter-spacing:.02em; color:var(--ink-soft); }
+  .cond .topic{ text-align:center; display:flex; flex-direction:column; gap:6px; }
+  .cond .topic .k{ font-family:var(--font-mono); font-size:11px; color:var(--blue); letter-spacing:.1em; text-transform:uppercase; }
+  .cond .topic .v{ font-family:var(--font-display); font-size:21px; font-weight:700; }
+  .cond .dims{
+    align-self:center; font-family:var(--font-mono); font-size:13.5px; color:var(--ink-soft);
+    background:var(--blue-tint); border:1px solid var(--line); border-radius:20px; padding:6px 18px;
+    font-variant-numeric:tabular-nums;
+  }
+  ol.items{ list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:14px; counter-reset:item; }
+  ol.items li{ counter-increment:item; display:grid; grid-template-columns:28px 1fr; gap:10px; font-size:15.5px; line-height:1.75; }
+  ol.items li::before{ content:counter(item) "."; font-family:var(--font-mono); color:var(--blue); font-weight:600; }
+  ol.items li .wl{ font-family:var(--font-mono); color:var(--blue-deep); font-weight:600; }
+  .cond .final{
+    margin-top:8px; padding-top:18px; border-top:1px solid var(--line); font-size:15px; color:var(--ink-soft);
+    display:flex; gap:10px;
+  }
+  .cond .final .mark{ color:var(--amber); flex-shrink:0; }
+
+  .plan{ padding:20px 10px 34px; display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .plan svg{ width:100%; max-width:820px; height:auto; }
+  .plan .cap{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); text-align:center; max-width:60ch; padding:0 20px; }
+
+  footer{ font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); text-align:center; padding-block:4px 50px; }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <span class="eyebrow"><span class="rule"></span>출제 방정식 v1.8 적용 · 모의문제 시제작 05</span>
+    <h1>전통 한약방</h1>
+    <p>서사나 특정 시간대 없이, 전통 한약방이라는 공간의 특징을 가장 선명하게 보여주는 데 집중해 지은 다섯 번째 모의문제. 조건지(1장)와 도면(2장)으로 구성된다.</p>
+  </header>
+
+  <!-- SHEET 1 -->
+  <section class="sheet">
+    <div class="sheet-bar"><span>SHEET <b>1</b> / 2 · 조건지</span><span>SKU 무대기술과 실기 모의문제</span></div>
+    <div class="cond">
+      <div class="doctitle">서경대학교 무대기술과 실기 모의문제</div>
+      <div class="topic">
+        <span class="k">주제</span>
+        <span class="v">전통 한약방 내부</span>
+      </div>
+      <div class="dims">벽 높이 2500 · 문 높이 1800 · 스케일 1/25</div>
+
+      <ol class="items">
+        <li>전통 한약방의 내부를 표현하시오.</li>
+        <li>특정 사건이나 시간대를 설정하지 말고, 한약방이라는 공간의 특징이 가장 선명하게 드러나도록 표현하시오.</li>
+        <li>안쪽 벽면(<span class="wl">B</span>)에는 작은 서랍이 빼곡히 들어찬 약재 서랍장을 벽 전체에 가득 채워 배치하고, 그중 몇 칸은 열려 있는 모습으로 표현하시오.</li>
+        <li>하수 쪽 벽면(<span class="wl">A</span>)에는 약을 달이는 화로와 탕기(약 끓이는 그릇)를 두시오.</li>
+        <li>상수 쪽 벽면(<span class="wl">C</span>)에는 거리로 이어지는 출입문을 두시오.</li>
+        <li>작업대(책상)와 그 위에 놓인 약연(약재를 빻는 돌 기구) 1개를 반드시 입체로 제작하시오.</li>
+        <li>작업대 위에는 한지에 싸이고 있는 약재 꾸러미들을 표현하되, 일부는 완성되어 묶여 있고 일부는 아직 펼쳐진 채로 함께 보이도록 하시오.</li>
+        <li>천장에는 건조 중인 약초 다발 여러 묶음이 거꾸로 매달려 있는 모습을 표현하시오.</li>
+        <li>약재 서랍장의 각 칸마다 약재 이름이 적힌 한자 표찰을 붙여두시오.</li>
+        <li>벽 한쪽에는 손으로 쓴 한자 약방문(처방전) 또는 상호가 적힌 현판을 두시오.</li>
+        <li>전통 약저울(저울대) 1개를 작업대 주변에 두시오.</li>
+        <li>나무로 된 서랍장과 작업대의 짙은 질감, 돌로 된 약연의 질감, 한지의 질감, 말린 약초의 거친 질감이 서로 구분되도록 표현하시오.</li>
+        <li>전체 공간은 짙은 갈색 나무, 한지의 미색, 말린 약초의 연갈색·녹갈색을 중심으로 구성하시오.</li>
+      </ol>
+
+      <p class="final"><span class="mark">*</span>제시된 조건을 바탕으로, 약재 서랍장부터 약연, 매달린 약초까지 전통 한약방 특유의 질서와 질감이 한 공간 안에 응축되어 드러나도록 완성하시오.</p>
+    </div>
+  </section>
+
+  <!-- SHEET 2 -->
+  <section class="sheet">
+    <div class="sheet-bar"><span>SHEET <b>2</b> / 2 · 도면</span><span>치수 미기재 · 학생 실측 작성</span></div>
+    <div class="plan">
+      <svg viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- walls -->
+        <polyline points="180,520 180,460 320,250 620,180 820,260 900,520"
+          stroke="var(--blue-deep)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- door swing on wall C: hinge (720,220), closed tip along wall (720,270), open tip into the room (670,220) -->
+        <line x1="720" y1="220" x2="670" y2="220" stroke="var(--ink-faint)" stroke-width="1.5"/>
+        <path d="M 720,270 A 50,50 0 0,1 670,220" fill="none" stroke="var(--ink-faint)" stroke-width="1.5"/>
+
+        <!-- wall labels -->
+        <text x="260" y="340" font-family="var(--font-mono)" font-size="22" font-weight="600" fill="var(--blue)">A</text>
+        <text x="260" y="360" font-family="var(--font-mono)" font-size="11" fill="var(--ink-faint)">화로·탕기</text>
+
+        <text x="450" y="218" font-family="var(--font-mono)" font-size="22" font-weight="600" fill="var(--blue)">B</text>
+        <text x="420" y="238" font-family="var(--font-mono)" font-size="11" fill="var(--ink-faint)">약재 서랍장</text>
+
+        <text x="745" y="248" font-family="var(--font-mono)" font-size="22" font-weight="600" fill="var(--blue)">C</text>
+        <text x="710" y="268" font-family="var(--font-mono)" font-size="11" fill="var(--ink-faint)">출입문</text>
+
+        <!-- object location: 작업대+약연 -->
+        <rect x="465" y="375" width="100" height="55" fill="var(--blue)" opacity="0.14" stroke="var(--blue)" stroke-width="2"/>
+        <text x="515" y="450" text-anchor="middle" font-family="var(--font-mono)" font-size="12.5" fill="var(--ink-soft)">작업대·약연 위치</text>
+
+        <!-- 상수/하수 -->
+        <line x1="180" y1="534" x2="180" y2="556" stroke="var(--ink-faint)" stroke-width="1"/>
+        <text x="180" y="578" text-anchor="middle" font-family="var(--font-display)" font-size="14" font-weight="600" fill="var(--ink-soft)">하수</text>
+
+        <line x1="900" y1="534" x2="900" y2="556" stroke="var(--ink-faint)" stroke-width="1"/>
+        <text x="900" y="578" text-anchor="middle" font-family="var(--font-display)" font-size="14" font-weight="600" fill="var(--ink-soft)">상수</text>
+
+        <!-- audience direction hint -->
+        <text x="540" y="600" text-anchor="middle" font-family="var(--font-mono)" font-size="11" letter-spacing="2" fill="var(--ink-faint)">객석 방향 (개방부)</text>
+      </svg>
+      <p class="cap">선·꺾임만 제공되는 백지 도면. 학생은 스케일(1/25)에 맞춰 각 벽의 실제 길이를 직접 산출해 기재한다.</p>
+    </div>
+  </section>
+
+  <footer>전통 한약방 · 모의문제 시제작본 05 · 출제 방정식 v1.8 기반</footer>
+</div>
